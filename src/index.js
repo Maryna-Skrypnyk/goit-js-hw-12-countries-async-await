@@ -41,13 +41,19 @@ async function onCountryInput(e) {
     if (country.length < 2) {
       renderCountryCard(country);
       toastify.onSuccess(country);
+      return;
     } else if (country.length < 10 && country.length > 1) {
       renderCountriesList(country);
-    } else {
+      return;
+    } else if (country.length > 10) {
       toastify.onFetchMore(country);
+      return;
+    } else {
+      toastify.onFetchError();
+      return;
     }
   } catch (error) {
-    toastify.onFetchError();
+    console.log(error);
   }
 }
 
