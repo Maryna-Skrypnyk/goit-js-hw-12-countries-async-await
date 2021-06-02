@@ -1,4 +1,4 @@
-import 'regenerator-runtime/runtime';
+// import 'regenerator-runtime/runtime';
 import countryCardTpl from './templates/country.hbs';
 import countriesListTpl from './templates/countries.hbs';
 import _debounce from 'lodash.debounce';
